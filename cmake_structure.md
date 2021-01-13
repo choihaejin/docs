@@ -4,14 +4,18 @@ XDB 프로젝트의 CMake 빌드 시스템에 대해 서술합니다.
 
 ## Contents
 
-### [1.Directory Tree](##directory-tree)
+### [1.Directory Tree](#directory-tree)
 
-- [build](###build)
-- [cmake_modules](###cmake_modules)
-- [thirdparty](###thirdparty)
-- [src](###src)
+- [build](#build)
+- [cmake_modules](#cmake_modules)
+- [thirdparty](#thirdparty)
+- [src](#src)
 
-### [1.Directory Tree](##directory-tree)
+### [2.File Structure](#file-structure)
+
+- [root CMakeLists.txt](#root-cmakelists.txt)
+- [src CMakeLists.txt](#src-cmakelists.txt)
+- [Find[PACKAGE].cmake](#find-package-.cmake)
 
 ----------
 
@@ -20,16 +24,16 @@ XDB 프로젝트의 CMake 빌드 시스템에 대해 서술합니다.
 $ tree xdb  
 
 📦xdb  
- ┣ 📂[build](###build)  
- ┣ 📂[cmake_modules](###cmake_modules)  
- ┣ 📂[src](###src)  
+ ┣ 📂build  
+ ┣ 📂cmake_modules  
+ ┣ 📂src  
  ┃ ┣ 📂module1  
  ┃ ┃ ┗ 📜CMakeLists.txt  
  ┃ ┣ 📂module2  
  ┃ ┃ ┗ 📜CMakeLists.txt  
  ┃ ┗ 📂module3  
  ┃ ┃ ┗ 📜CMakeLists.txt  
- ┣ 📂[thirdparty](###thirdparty)  
+ ┣ 📂thirdparty  
  ┃ ┣ 📜download_dependencies.sh  
  ┃ ┗ 📜versions.txt  
  ┗ 📜CMakeLists.txt  
@@ -47,7 +51,7 @@ $ tree xdb
 
 ### thirdparty
 
-thirdparty library의 아카이브 파일로(tar.gz; zip) 저장되어 있습니다. 빌드 타임에 이 파일들이 압축해제되고 빌드되어 xdb에 링크됩니다.
+thirdparty library의 아카이브 파일형식(tar.gz; zip)으로 저장되어 있습니다. 빌드 타임에 이 파일들이 압축해제되고 빌드되어 xdb에 링크됩니다.
 
 download_dependencies.sh
 : 파일 다운로드를 수행하는 스크립트
@@ -58,3 +62,11 @@ version.txt
 ### src
 
 소스 파일이 저장되어 있습니다. 각각의 디렉토리에 CMakeLists.txt를 갖고 있습니다.
+
+## File Structure
+
+### root CMakeLists.txt
+
+### src CMakeLists.txt
+
+### Find[PACKAGE].cmake

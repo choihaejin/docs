@@ -4,31 +4,31 @@ XDB의 C++ 코딩 규칙을 정의합니다. [Google C++ Style Guide](https://go
 
 ## Contents
 
-### [1.Header Files](##header-files)
+### [1.Header Files](#header-files)
 
-- [The #define Guard](###the-#define-guard)
-- [Inline Functions](###inline-functions)
-- [Order of Includes](###order-of-includes)
+- [The #define Guard](#the-define-guard)
+- [Inline Functions](#inline-functions)
+- [Order of Includes](#order-of-includes)
 
-### [2.Scoping](##Scoping)
+### [2.Scoping](#scoping)
 
-- [Namespaces](###namespaces)
-- [Local Variables](###local-variables)
+- [Namespaces](#namespaces)
+- [Local Variables](#local-variables)
 
-### [3.Functions](##functions)
+### [3.Functions](#functions)
 
-### [4.Other C++ Features](##other-c++-features)
+### [4.Other C++ Features](#other-c++-features)
 
-### [5.Naming](##naming)
+### [5.Naming](#naming)
 
-- [General Naming Rules](###general-naming-rules)
-- [File Names](###file-names)
-- [Type Names](###type-names)
-- [Variable Names](###variable-names)
-- [Constant Names](###constant-names)
-- [Function Names](###function-names)
+- [General Naming Rules](#general-naming-rules)
+- [File Names](#file-names)
+- [Type Names](#type-names)
+- [Variable Names](#variable-names)
+- [Constant Names](#constant-names)
+- [Function Names](#function-names)
 
-### [7.Comments](##comments)
+### [7.Comments](#comments)
 
 ----------
 
