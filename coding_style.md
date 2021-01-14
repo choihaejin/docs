@@ -4,24 +4,24 @@ XDB의 C++ 코딩 규칙을 정의합니다. [Google C++ Style Guide](https://go
 
 ## Contents
 
-### [1. Header Files](#1.-header-files)
+### [1. Header Files](#header-files)
 
 - [The #define Guard](#the-define-guard)
 - [Inline Functions](#inline-functions)
 - [Order of Includes](#order-of-includes)
 
-### [2. Scoping](#2.-scoping)
+### [2. Scoping](#scoping)
 
 - [Namespaces](#namespaces)
 - [Local Variables](#local-variables)
 
-### [3. Other C++ Features](#3.-other-c++-features)
+### [3. Other C++ Features](#other-c++-features)
 
 - [Casting](#casting)
 - [Preincrement and Predecrement](#preincrement-and-predecrement)
 - [Integer Types](#integer-types)
 
-### [4. Naming](#4.-naming)
+### [4. Naming](#naming)
 
 - [General Naming Rules](#general-naming-rules)
 - [File Names](#file-names)
@@ -30,11 +30,9 @@ XDB의 C++ 코딩 규칙을 정의합니다. [Google C++ Style Guide](https://go
 - [Constant Names](#constant-names)
 - [Function Names](#function-names)
 
-### [5. Comments](#5.-comments)
-
 ----------
 
-## 1. Header Files
+## Header Files
 
 main() 함수를 포함하고 있는 .cc 파일이거나 특수한 경우를(e.g. unit test를 구현한 .cc파일) 제외하고 모든 .cc 파일은 대응하는 .h 파일을 가지도록 합니다.
 
@@ -94,7 +92,7 @@ C system header 파일들은 대체로 C++ 헤더파일로 대체가 가능한 �
 
 ----------
 
-## 2. Scoping
+## Scoping
 
 ### Namespaces
 
@@ -134,7 +132,7 @@ v.push_back(2); // Bad
 std::vector<int> v = {1, 2}; // Good
 ```
 
-## 3. Other C++ Features
+## Other C++ Features
 
 ### Casting
 
@@ -155,7 +153,7 @@ C 스타일의 캐스팅은 사용 목적을 분명히 드러내기 어렵습니
 
 short, long long 등의 built-in type 보다 \<cstdint\> 에서 정의한 int16_t, int64_t 등의 type을 사용하도록 합니다. 단, int32_t의 의미가 명확히 필요한 상황이 아니면 int를 사용은 괜찮습니다.
 
-## 4. Naming
+## Naming
 
 ### General Naming Rules
 
