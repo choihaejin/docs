@@ -1,25 +1,27 @@
 # XDB C++ Coding Style
 
-XDB의 C++ 코딩 규칙을 정의합니다. [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) 에서 일부 항목을 추려 정리하였습니다.  
+XDB의 C++ 코딩 규칙을 정의합니다. [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) 에서 일부 항목을 추려 정리하였습니다. [cpplint.py](https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py) 를 사용해 style error를 검출 할 수 있습니다.
 
 ## Contents
 
-### [1.Header Files](#header-files)
+### [1. Header Files](#1.-header-files)
 
 - [The #define Guard](#the-define-guard)
 - [Inline Functions](#inline-functions)
 - [Order of Includes](#order-of-includes)
 
-### [2.Scoping](#scoping)
+### [2. Scoping](#2.-scoping)
 
 - [Namespaces](#namespaces)
 - [Local Variables](#local-variables)
 
-### [3.Functions](#functions)
+### [3. Other C++ Features](#3.-other-c++-features)
 
-### [4.Other C++ Features](#other-c++-features)
+- [Casting](#casting)
+- [Preincrement and Predecrement](#preincrement-and-predecrement)
+- [Integer Types](#integer-types)
 
-### [5.Naming](#naming)
+### [4. Naming](#4.-naming)
 
 - [General Naming Rules](#general-naming-rules)
 - [File Names](#file-names)
@@ -28,11 +30,11 @@ XDB의 C++ 코딩 규칙을 정의합니다. [Google C++ Style Guide](https://go
 - [Constant Names](#constant-names)
 - [Function Names](#function-names)
 
-### [7.Comments](#comments)
+### [5. Comments](#5.-comments)
 
 ----------
 
-## Header Files
+## 1. Header Files
 
 main() 함수를 포함하고 있는 .cc 파일이거나 특수한 경우를(e.g. unit test를 구현한 .cc파일) 제외하고 모든 .cc 파일은 대응하는 .h 파일을 가지도록 합니다.
 
@@ -92,7 +94,7 @@ C system header 파일들은 대체로 C++ 헤더파일로 대체가 가능한 �
 
 ----------
 
-## Scoping
+## 2. Scoping
 
 ### Namespaces
 
@@ -132,13 +134,28 @@ v.push_back(2); // Bad
 std::vector<int> v = {1, 2}; // Good
 ```
 
-## Classes
+## 3. Other C++ Features
 
-### Structs vs. Classes
+### Casting
 
-Struct는 passive object로 구성된 데이터들로만 작성합니다; 그 외에는 Class를 사용합니다.
+C 스타일의 캐스팅은 사용 목적을 분명히 드러내기 어렵습니다. 따라서 C++ 스타일의 type casting을 사용하도록 합니다.
 
-## Naming
+- static_cast
+- const_cast
+- dynamic_cast
+- reinterpret_cast
+
+단, dynamic_cast를 사용할 때 클래스 상속관계를 분명히 파악하고 사용하여야 합니다.
+
+### Preincrement and Predecrement
+
+의미상 postincrement(i++ or i--)를 사용할 필요가 없다면 preincrement 연산자(++i or --i)를 사용하도록 합니다.
+
+### Integer Types
+
+short, long long 등의 built-in type 보다 \<cstdint\> 에서 정의한 int16_t, int64_t 등의 type을 사용하도록 합니다. 단, int32_t의 의미가 명확히 필요한 상황이 아니면 int를 사용은 괜찮습니다.
+
+## 4. Naming
 
 ### General Naming Rules
 
@@ -224,7 +241,7 @@ const int kBufferSize = 64;
 
 ### Function Names
 
-일반 함수들은 [Type names](###type-names) 와 같은 규칙을 따릅니다. 예외로 accessor와 mutator 함수에 대해서는 변수와 같은 이름을 가질 수 있습니다.  
+일반 함수들은 [Type names](#type-names) 와 같은 규칙을 따릅니다. 예외로 accessor와 mutator 함수에 대해서는 변수와 같은 이름을 가질 수 있습니다.  
 
 ```C++
 // 일반 함수
